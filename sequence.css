@@ -1,0 +1,40 @@
+body {
+	background-color: #333;
+	width: 100%;
+}
+
+#sequencer {
+	margin: 5em auto;
+	width: 380px;
+
+	/* disable click to highlight */
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.row {
+
+}
+
+.pad {
+	width: 20px;
+	height: 20px;
+	background-color: #444;
+	display: inline-block;
+}
+
+.on {
+	background-color: #ABABAB;
+}
+
+.hit {
+	background-color: white;
+}
+
+.fx {
+	background-color: #666;
+}
