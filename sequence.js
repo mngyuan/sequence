@@ -34,7 +34,7 @@ $(document).ready( function() {
 				}
 
 				var curdown = currow.next().find('.pad:nth-child(' + beat + ')');
-				var dist = 1;
+				dist = 1;
 				while(curdown.length > 0) {
 					curdown.delay(dist*beattime).
 						animate({ opacity: 0.4 }, beattime * breathtime).
@@ -45,7 +45,7 @@ $(document).ready( function() {
 				}
 
 				var curleft = curpad.prev();
-				var dist = 1;
+				dist = 1;
 				while(curleft.length > 0) {
 					curleft.delay(dist*beattime).
 						animate({ opacity: 0.4 }, beattime * breathtime).
@@ -55,17 +55,28 @@ $(document).ready( function() {
 					curleft = curleft.prev();
 				}
 
-				curpad.next().
-					animate({ opacity: 0.4 }, beattime * breathtime).
-					animate({ opacity: 1.0 }, beattime * breathtime).
-					addClass('right');
+				var curright = curpad.next();
+				dist = 1;
+				while(curright.length > 0) {
+					curright.delay(dist*beattime).
+						animate({ opacity: 0.4 }, beattime * breathtime).
+						animate({ opacity: 1.0 }, beattime * breathtime).
+						addClass('right');
+					dist += 1;
+					curright = curright.next();
+				}
+
+				// curpad.next().
+				// 	animate({ opacity: 0.4 }, beattime * breathtime).
+				// 	animate({ opacity: 1.0 }, beattime * breathtime).
+				// 	addClass('right');
 			}
-			if( curpad.hasClass('right') ) {
-				curpad.next().
-					animate({ opacity: 0.4 }, beattime * breathtime).
-					animate({ opacity: 1.0 }, beattime * breathtime).
-					addClass('right');
-			}
+			// if( curpad.hasClass('right') ) {
+			// 	curpad.next().
+			// 		animate({ opacity: 0.4 }, beattime * breathtime).
+			// 		animate({ opacity: 1.0 }, beattime * breathtime).
+			// 		addClass('right');
+			// }
 		}
 
 		beat = 1+beat% 16;
